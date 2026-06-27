@@ -235,3 +235,73 @@
     padding: var(--alma-space-xl) var(--alma-space-md) var(--alma-space-2xl);
   }
 }
+
+/* === terminal prompt line === */
+.alma-prompt-line {
+  font: 13px/1.6 var(--alma-font-mono);
+  color: var(--alma-dim);
+  margin-bottom: 2.5em;
+}
+.alma-prompt-line .alma-prompt-user { color: var(--alma-accent); }
+.alma-prompt-line .alma-prompt-sep  { color: var(--alma-dim); }
+.alma-prompt-line .alma-prompt-path { color: var(--alma-muted); }
+
+/* === now section (key-value grid) === */
+.alma-now-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3em 1em;
+  font-size: 0.85em;
+  margin-bottom: 1em;
+}
+.alma-now-key {
+  color: var(--alma-muted);
+  font-family: var(--alma-font-mono);
+  font-size: 0.85em;
+  text-align: right;
+}
+.alma-now-val { color: var(--alma-fg); }
+.alma-now-val a {
+  color: var(--alma-link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--alma-dim);
+}
+.alma-now-val a:hover { border-color: var(--alma-link); }
+
+/* === project grid (two-column, grouped) === */
+.alma-project-grid {
+  font: 13px/2.4 var(--alma-font-mono);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3em 1em;
+  margin-bottom: 2em;
+}
+.alma-project-grid a {
+  color: var(--alma-link);
+  text-decoration: none;
+}
+.alma-project-grid a:hover { color: var(--alma-accent); }
+.alma-project-grid .alma-project-tag {
+  color: var(--alma-dim);
+  font-size: 0.75em;
+}
+.alma-project-grid .alma-project-group {
+  grid-column: 1 / -1;
+  color: var(--alma-dim);
+  font-size: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-top: 0.8em;
+  margin-bottom: -0.2em;
+}
+@media (max-width: 480px) {
+  .alma-project-grid { grid-template-columns: 1fr; }
+}
+
+/* === blinking cursor === */
+.alma-blink {
+  animation: alma-blink-anim 1s step-end infinite;
+}
+@keyframes alma-blink-anim {
+  50% { opacity: 0; }
+}
